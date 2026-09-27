@@ -223,3 +223,45 @@ function sendWhatsAppEnquiry(event) {
         "_blank"
     );
 }
+const whatsappForm = document.getElementById("whatsappForm");
+
+if (whatsappForm) {
+
+    whatsappForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const course = document.getElementById("course").value;
+        const message = document.getElementById("message").value.trim();
+
+        const whatsappNumber = "919544900152";
+
+        const whatsappMessage =
+`Hello Hareesh,
+
+I would like to enquire about your training.
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Training: ${course}
+
+Requirement:
+${message}
+
+Thank you.`;
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(whatsappMessage);
+
+        window.open(whatsappURL, "_blank");
+
+    });
+}
+
