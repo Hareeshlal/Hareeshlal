@@ -1,59 +1,34 @@
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector(".nav");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (menuBtn && nav) {
-  menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
+  /* Mobile menu */
+  const menuBtn = document.querySelector(".menu-btn");
+  const nav = document.querySelector(".nav");
 
-  nav.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("active");
+  if (menuBtn && nav) {
+    menuBtn.addEventListener("click", function () {
+      nav.classList.toggle("open");
     });
-  });
-}
 
-/* Feedback auto-slider */
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("open");
+      });
+    });
+  }
 
-const feedback = document.querySelector(".testimonial-grid");
+  /* Smooth scrolling */
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
 
-if (feedback) {
-  let autoSlide;
-
-  const startSlider = () => {
-    autoSlide = setInterval(() => {
-      const card = feedback.querySelector(".testimonial");
-
-      if (!card) return;
-
-      const cardWidth = card.offsetWidth + 25;
-
-      if (
-        feedback.scrollLeft + feedback.clientWidth >=
-        feedback.scrollWidth - 10
-      ) {
-        feedback.scrollTo({
-          left: 0,
-          behavior: "smooth"
-        });
-      } else {
-        feedback.scrollBy({
-          left: cardWidth,
-          behavior: "smooth"
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
         });
       }
-    }, 4000);
-  };
+    });
+  });
 
-  const stopSlider = () => {
-    clearInterval(autoSlide);
-  };
-
-  startSlider();
-
-  feedback.addEventListener("mouseenter", stopSlider);
-  feedback.addEventListener("mouseleave", startSlider);
-
-  feedback.addEventListener("touchstart", stopSlider);
-  feedback.addEventListener("touchend", startSlider);
-}
+});
