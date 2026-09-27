@@ -3,16 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
   /* =========================
      MOBILE MENU
   ========================= */
+
   const menuBtn = document.querySelector(".menu-btn");
   const nav = document.querySelector(".nav");
 
   if (menuBtn && nav) {
     menuBtn.addEventListener("click", function () {
       nav.classList.toggle("open");
-      menuBtn.setAttribute(
-        "aria-label",
-        nav.classList.contains("open") ? "Close menu" : "Open menu"
-      );
     });
 
     nav.querySelectorAll("a").forEach(function (link) {
@@ -24,170 +21,169 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================
-     PROFESSIONAL TESTIMONIAL SLIDER
+     TESTIMONIAL SLIDER
   ========================= */
-  const slider = document.querySelector(".testimonial-grid");
+
+  const slides =
+    document.querySelectorAll(".testimonial-slide");
+
+  const dots =
+    document.querySelectorAll(".testimonial-dot");
+
+  const previous =
+    document.querySelector(".testimonial-prev");
+
+  const next =
+    document.querySelector(".testimonial-next");
+
+  if (!slides.length) {
+    return;
+  }
+
+  let current = 0;
+  let timer;
+
+
+  function showSlide(index) {
+
+    if (index >= slides.length) {
+      index = 0;
+    }
+
+    if (index < 0) {
+      index = slides.length - 1;
+    }
+
+    current = index;
+
+
+    slides.forEach(function (slide, i) {
+
+      slide.classList.toggle(
+        "active",
+        i === current
+      );
+
+    });
+
+
+    dots.forEach(function (dot, i) {
+
+      dot.classList.toggle(
+        "active",
+        i === current
+      );
+
+    });
+
+  }
+
+
+  function nextSlide() {
+    showSlide(current + 1);
+  }
+
+
+  function previousSlide() {
+    showSlide(current - 1);
+  }
+
+
+  function startAutoSlide() {
+
+    clearInterval(timer);
+
+    timer = setInterval(function () {
+      nextSlide();
+    }, 5000);
+
+  }
+
+
+  if (next) {
+
+    next.addEventListener("click", function () {
+
+      nextSlide();
+      startAutoSlide();
+
+    });
+
+  }
+
+
+  if (previous) {
+
+    previous.addEventListener("click", function () {
+
+      previousSlide();
+      startAutoSlide();
+
+    });
+
+  }
+
+
+  dots.forEach(function (dot, index) {
+
+    dot.addEventListener("click", function () {
+
+      showSlide(index);
+      startAutoSlide();
+
+    });
+
+  });
+
+
+  /* Touch swipe */
+
+  let touchStart = 0;
+
+  const slider =
+    document.querySelector(".testimonial-slider");
 
   if (slider) {
 
-    const slides = Array.from(
-      slider.querySelectorAll(".testimonial")
-    );
+    slider.addEventListener("touchstart", function (event) {
 
-    if (slides.length > 0) {
+      touchStart =
+        event.changedTouches[0].screenX;
 
-      let currentSlide = 0;
-      let autoSlide;
+      clearInterval(timer);
 
-      /* Create slider controls */
-      const controls = document.createElement("div");
-      controls.className = "slider-controls";
-
-      const prevBtn = document.createElement("button");
-      prevBtn.className = "slider-btn";
-      prevBtn.type = "button";
-      prevBtn.innerHTML = "←";
-      prevBtn.setAttribute("aria-label", "Previous testimonial");
-
-      const dots = document.createElement("div");
-      dots.className = "slider-dots";
-
-      const nextBtn = document.createElement("button");
-      nextBtn.className = "slider-btn";
-      nextBtn.type = "button";
-      nextBtn.innerHTML = "→";
-      nextBtn.setAttribute("aria-label", "Next testimonial");
-
-      controls.appendChild(prevBtn);
-      controls.appendChild(dots);
-      controls.appendChild(nextBtn);
-
-      slider.parentNode.appendChild(controls);
+    });
 
 
-      /* Create dots */
-      slides.forEach(function (slide, index) {
+    slider.addEventListener("touchend", function (event) {
 
-        const dot = document.createElement("button");
+      const touchEnd =
+        event.changedTouches[0].screenX;
 
-        dot.className = "slider-dot";
-        dot.type = "button";
-        dot.setAttribute(
-          "aria-label",
-          "Go to testimonial " + (index + 1)
-        );
-
-        dot.addEventListener("click", function () {
-          showSlide(index);
-          restartAutoSlide();
-        });
-
-        dots.appendChild(dot);
-      });
+      const difference =
+        touchStart - touchEnd;
 
 
-      /* Show slide */
-      function showSlide(index) {
+      if (Math.abs(difference) > 50) {
 
-        if (index >= slides.length) {
-          currentSlide = 0;
-        } else if (index < 0) {
-          currentSlide = slides.length - 1;
+        if (difference > 0) {
+          nextSlide();
         } else {
-          currentSlide = index;
+          previousSlide();
         }
 
-        slides.forEach(function (slide, i) {
-          slide.classList.toggle(
-            "active",
-            i === currentSlide
-          );
-        });
-
-        const allDots =
-          dots.querySelectorAll(".slider-dot");
-
-        allDots.forEach(function (dot, i) {
-          dot.classList.toggle(
-            "active",
-            i === currentSlide
-          );
-        });
       }
 
-
-      /* Previous */
-      prevBtn.addEventListener("click", function () {
-        showSlide(currentSlide - 1);
-        restartAutoSlide();
-      });
-
-
-      /* Next */
-      nextBtn.addEventListener("click", function () {
-        showSlide(currentSlide + 1);
-        restartAutoSlide();
-      });
-
-
-      /* Automatic sliding */
-      function startAutoSlide() {
-        autoSlide = setInterval(function () {
-          showSlide(currentSlide + 1);
-        }, 5000);
-      }
-
-
-      function restartAutoSlide() {
-        clearInterval(autoSlide);
-        startAutoSlide();
-      }
-
-
-      /* Pause when mouse is over slider */
-      slider.addEventListener("mouseenter", function () {
-        clearInterval(autoSlide);
-      });
-
-      slider.addEventListener("mouseleave", function () {
-        startAutoSlide();
-      });
-
-
-      /* Mobile swipe */
-      let touchStartX = 0;
-      let touchEndX = 0;
-
-      slider.addEventListener("touchstart", function (e) {
-        touchStartX = e.changedTouches[0].screenX;
-        clearInterval(autoSlide);
-      });
-
-      slider.addEventListener("touchend", function (e) {
-
-        touchEndX = e.changedTouches[0].screenX;
-
-        const difference =
-          touchStartX - touchEndX;
-
-        if (Math.abs(difference) > 50) {
-
-          if (difference > 0) {
-            showSlide(currentSlide + 1);
-          } else {
-            showSlide(currentSlide - 1);
-          }
-        }
-
-        startAutoSlide();
-      });
-
-
-      /* Start */
-      showSlide(0);
       startAutoSlide();
 
-    }
+    });
+
   }
+
+
+  /* Start */
+
+  showSlide(0);
+  startAutoSlide();
 
 });
