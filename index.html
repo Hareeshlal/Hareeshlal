@@ -491,135 +491,45 @@
 
 
 <!-- ================= CONTACT ================= -->
-<!-- ==================== CONTACT ==================== -->
 
-<section class="contact" id="contact">
+<div class="enquiry-card">
+    <h2>Enquire Now</h2>
+    <p class="enquiry-subtitle">
+        Tell us about your training requirement and we'll get back to you.
+    </p>
 
-    <div class="container contact-grid">
+    <form id="whatsappForm">
 
-        <!-- LEFT SIDE -->
-        <div class="contact-content">
+        <div class="form-row">
+            <input type="text" id="name" placeholder="Your Name" required>
 
-            <p class="eyebrow">LET'S WORK TOGETHER</p>
-
-            <h2>
-                Practical training.<br>
-                Real-world skills.
-            </h2>
-
-            <p class="contact-intro">
-                Looking for practical ITSM or Project Management
-                training? Let's discuss your requirements, audience
-                and preferred learning format.
-            </p>
-
-            <div class="contact-details">
-
-                <div class="contact-item">
-                    <strong>EMAIL</strong>
-                    <a href="mailto:hareeshlal1@gmail.com">
-                        hareeshlal1@gmail.com
-                    </a>
-                </div>
-
-                <div class="contact-item">
-                    <strong>WHATSAPP</strong>
-                    <a href="https://wa.me/919544900152" target="_blank">
-                        +91 95449 00152
-                    </a>
-                </div>
-
-                <div class="contact-item">
-                    <strong>LINKEDIN</strong>
-                    <a href="#" target="_blank">
-                        View professional profile →
-                    </a>
-                </div>
-
-            </div>
-
+            <input type="email" id="email" placeholder="Email Address" required>
         </div>
 
+        <div class="form-row">
+            <input type="tel" id="phone" placeholder="Phone Number">
 
-        <!-- RIGHT SIDE -->
-        <div class="contact-card">
-
-            <h3>Enquire Now</h3>
-
-            <form class="contact-form"
-                  onsubmit="sendWhatsAppEnquiry(event)">
-
-                <input
-                    type="text"
-                    id="enquiryName"
-                    placeholder="Your Name"
-                    required
-                >
-
-                <input
-                    type="email"
-                    id="enquiryEmail"
-                    placeholder="Email Address"
-                    required
-                >
-
-                <input
-                    type="tel"
-                    id="enquiryPhone"
-                    placeholder="Phone Number"
-                    required
-                >
-
-                <select id="enquiryCourse" required>
-                    <option value="">Select Course</option>
-                    <option value="ITSM Training">
-                        ITSM Training
-                    </option>
-                    <option value="Service Management">
-                        Service Management
-                    </option>
-                    <option value="Project Management">
-                        Project Management
-                    </option>
-                    <option value="PMP Training">
-                        PMP Training
-                    </option>
-                    <option value="ITIL Training">
-                        ITIL Training
-                    </option>
-                    <option value="Corporate Training">
-                        Corporate Training
-                    </option>
-                </select>
-
-                <textarea
-                    id="enquiryMessage"
-                    rows="4"
-                    placeholder="Tell us about your training requirement">
-                </textarea>
-
-                <button type="submit" class="whatsapp-btn">
-                    <span>◉</span>
-                    Enquire via WhatsApp
-                </button>
-
-            </form>
-
+            <select id="course" required>
+                <option value="">Select Training</option>
+                <option value="ITIL / ITSM Training">ITIL / ITSM Training</option>
+                <option value="Project Management Training">Project Management Training</option>
+                <option value="PMP Training">PMP Training</option>
+                <option value="Corporate Training">Corporate Training</option>
+                <option value="Other">Other</option>
+            </select>
         </div>
 
-    </div>
+        <textarea
+            id="message"
+            placeholder="Tell us briefly about your training requirement"
+            rows="5"></textarea>
 
-</section>
+        <button type="submit" class="whatsapp-btn">
+            <span>◉</span> Enquire via WhatsApp
+        </button>
 
-<footer>
-
-  <div class="container">
-    Practical IT & Project Management Training
-    <span>© 2026 Hareesh Lal</span>
-  </div>
-
-</footer>
-
+    </form>
+</div>
 
 <script src="script.js"></script>
 
