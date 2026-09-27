@@ -566,3 +566,149 @@ footer span {
     margin-top: 5px;
   }
 }
+/* =================================
+   PROFESSIONAL TESTIMONIAL SLIDER
+================================= */
+
+.testimonial-grid {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.testimonial-grid .testimonial {
+  display: none;
+  width: 100%;
+  margin: 0;
+  padding: 45px 35px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e1e7ed;
+  box-shadow: 0 12px 35px rgba(20, 45, 70, 0.08);
+  animation: testimonialFade 0.5s ease;
+}
+
+.testimonial-grid .testimonial.active {
+  display: block;
+}
+
+.testimonial-grid .testimonial p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #20344b;
+  margin: 0 0 25px;
+}
+
+.testimonial-grid .testimonial .person {
+  font-size: 15px;
+  font-weight: 600;
+  color: #7a8998;
+}
+
+
+/* Slider controls */
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.slider-btn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #d7e0e8;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #17395c;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.slider-btn:hover {
+  background: #f36f21;
+  color: #ffffff;
+  border-color: #f36f21;
+  transform: translateY(-2px);
+}
+
+
+/* Dots */
+
+.slider-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.slider-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #c8d2dc;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.slider-dot.active {
+  width: 28px;
+  border-radius: 10px;
+  background: #f36f21;
+}
+
+
+/* Animation */
+
+@keyframes testimonialFade {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .testimonial-grid {
+    min-height: 360px;
+  }
+
+  .testimonial-grid .testimonial {
+    padding: 30px 25px;
+    border-radius: 18px;
+  }
+
+  .testimonial-grid .testimonial p {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .testimonial-grid .testimonial .person {
+    font-size: 14px;
+  }
+
+  .slider-controls {
+    margin-top: 20px;
+  }
+
+  .slider-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
