@@ -491,69 +491,125 @@
 
 
 <!-- ================= CONTACT ================= -->
+<!-- ==================== CONTACT ==================== -->
 
 <section class="contact" id="contact">
 
-  <div class="container contact-grid">
+    <div class="container contact-grid">
 
-    <div>
+        <!-- LEFT SIDE -->
+        <div class="contact-content">
 
-      <p class="eyebrow">START A CONVERSATION</p>
+            <p class="eyebrow">LET'S WORK TOGETHER</p>
 
-      <h2>
-        Looking for practical<br>
-        ITSM or project<br>
-        management training?
-      </h2>
+            <h2>
+                Practical training.<br>
+                Real-world skills.
+            </h2>
 
-      <p>
-        Contact Hareesh to discuss training requirements,
-        format and audience.
-      </p>
+            <p class="contact-intro">
+                Looking for practical ITSM or Project Management
+                training? Let's discuss your requirements, audience
+                and preferred learning format.
+            </p>
+
+            <div class="contact-details">
+
+                <div class="contact-item">
+                    <strong>EMAIL</strong>
+                    <a href="mailto:hareeshlal1@gmail.com">
+                        hareeshlal1@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>WHATSAPP</strong>
+                    <a href="https://wa.me/919544900152" target="_blank">
+                        +91 95449 00152
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>LINKEDIN</strong>
+                    <a href="#" target="_blank">
+                        View professional profile →
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="contact-card">
+
+            <h3>Enquire Now</h3>
+
+            <form class="contact-form"
+                  onsubmit="sendWhatsAppEnquiry(event)">
+
+                <input
+                    type="text"
+                    id="enquiryName"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="enquiryEmail"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="enquiryPhone"
+                    placeholder="Phone Number"
+                    required
+                >
+
+                <select id="enquiryCourse" required>
+                    <option value="">Select Course</option>
+                    <option value="ITSM Training">
+                        ITSM Training
+                    </option>
+                    <option value="Service Management">
+                        Service Management
+                    </option>
+                    <option value="Project Management">
+                        Project Management
+                    </option>
+                    <option value="PMP Training">
+                        PMP Training
+                    </option>
+                    <option value="ITIL Training">
+                        ITIL Training
+                    </option>
+                    <option value="Corporate Training">
+                        Corporate Training
+                    </option>
+                </select>
+
+                <textarea
+                    id="enquiryMessage"
+                    rows="4"
+                    placeholder="Tell us about your training requirement">
+                </textarea>
+
+                <button type="submit" class="whatsapp-btn">
+                    <span>◉</span>
+                    Enquire via WhatsApp
+                </button>
+
+            </form>
+
+        </div>
 
     </div>
-
-
-    <div class="contact-card">
-
-      <div>
-        <small>Phone / WhatsApp</small>
-        <a href="tel:+919544900152">
-          +91 95449 00152
-        </a>
-      </div>
-
-      <div>
-        <small>Email</small>
-        <a href="mailto:hareeshlal1@gmail.com">
-          hareeshlal1@gmail.com
-        </a>
-      </div>
-
-      <div>
-        <small>LinkedIn</small>
-        <a href="https://www.linkedin.com/in/hareesh-lal-993a1a110/"
-           target="_blank"
-           rel="noopener">
-          View professional profile →
-        </a>
-      </div>
-
-      <a class="btn whatsapp"
-         href="https://wa.me/919544900152"
-         target="_blank"
-         rel="noopener">
-        Enquire on WhatsApp
-      </a>
-
-    </div>
-
-  </div>
 
 </section>
-
-</main>
-
 
 <footer>
 
