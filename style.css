@@ -570,255 +570,104 @@ footer span {
    PROFESSIONAL TESTIMONIAL SLIDER
 ================================= */
 
-.testimonial-grid {
-  position: relative;
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  min-height: 300px;
-}
-
-.testimonial-grid .testimonial {
-  display: none;
-  width: 100%;
-  margin: 0;
-  padding: 45px 35px;
-  box-sizing: border-box;
-  border-radius: 20px;
-  background: #ffffff;
-  border: 1px solid #e1e7ed;
-  box-shadow: 0 12px 35px rgba(20, 45, 70, 0.08);
-  animation: testimonialFade 0.5s ease;
-}
-
-.testimonial-grid .testimonial.active {
-  display: block;
-}
-
-.testimonial-grid .testimonial p {
-  font-size: 20px;
-  line-height: 1.8;
-  color: #20344b;
-  margin: 0 0 25px;
-}
-
-.testimonial-grid .testimonial .person {
-  font-size: 15px;
-  font-weight: 600;
-  color: #7a8998;
-}
-
-
-/* Slider controls */
-
-.slider-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 25px;
-}
-
-.slider-btn {
-  width: 48px;
-  height: 48px;
-  border: 1px solid #d7e0e8;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #17395c;
-  font-size: 22px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.slider-btn:hover {
-  background: #f36f21;
-  color: #ffffff;
-  border-color: #f36f21;
-  transform: translateY(-2px);
-}
-
-
-/* Dots */
-
-.slider-dots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.slider-dot {
-  width: 9px;
-  height: 9px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: #c8d2dc;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.slider-dot.active {
-  width: 28px;
-  border-radius: 10px;
-  background: #f36f21;
-}
-
-
-/* Animation */
-
-@keyframes testimonialFade {
-  from {
-    opacity: 0;
-    transform: translateX(25px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-
-/* Mobile */
-
-@media (max-width: 700px) {
-
-  .testimonial-grid {
-    min-height: 360px;
-  }
-
-  .testimonial-grid .testimonial {
-    padding: 30px 25px;
-    border-radius: 18px;
-  }
-
-  .testimonial-grid .testimonial p {
-    font-size: 18px;
-    line-height: 1.7;
-  }
-
-  .testimonial-grid .testimonial .person {
-    font-size: 14px;
-  }
-
-  .slider-controls {
-    margin-top: 20px;
-  }
-
-  .slider-btn {
-    width: 44px;
-    height: 44px;
-  }
-}
 /* =========================================
    PROFESSIONAL TESTIMONIAL SLIDER
 ========================================= */
 
 .testimonial-slider {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
   position: relative;
+  max-width: 900px;
+  margin: 50px auto 0;
+  overflow: hidden;
 }
 
 .testimonial-track {
   position: relative;
-  width: 100%;
-  min-height: 330px;
-  overflow: hidden;
-  border-radius: 18px;
+  min-height: 360px;
 }
 
 .testimonial-slide {
   display: none;
-  width: 100%;
-  min-height: 330px;
-  padding: 45px 55px;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
   background: #ffffff;
   border: 1px solid #e1e8ee;
-  border-radius: 18px;
-  box-shadow: 0 15px 40px rgba(20, 50, 75, 0.10);
-  position: relative;
-  animation: testimonialIn 0.55s ease;
+  border-radius: 22px;
+  padding: 45px;
+  box-shadow: 0 15px 40px rgba(20, 50, 80, 0.08);
 }
 
 .testimonial-slide.active {
   display: block;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .quote-mark {
-  font-family: Georgia, serif;
-  font-size: 80px;
+  font-size: 70px;
   line-height: 0.7;
-  color: #f47732;
-  font-weight: bold;
+  color: #f47721;
+  font-weight: 700;
   margin-bottom: 25px;
 }
 
 .testimonial-slide p {
-  font-size: 19px;
+  font-size: 20px;
   line-height: 1.8;
-  color: #263e55;
-  margin: 0 0 30px;
+  color: #20364d;
+  margin-bottom: 30px;
 }
 
-.testimonial-slide .person {
-  border-top: 1px solid #e5ebf0;
-  padding-top: 18px;
+.person {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 5px;
+  border-top: 1px solid #e5ebf0;
+  padding-top: 20px;
 }
 
-.testimonial-slide .person strong {
-  color: #123f65;
-  font-size: 16px;
+.person strong {
+  font-size: 17px;
+  color: #173957;
 }
 
-.testimonial-slide .person span {
-  color: #71808d;
-  font-size: 13px;
+.person span {
+  font-size: 14px;
+  color: #7a8997;
 }
-
-
-/* -----------------------------------------
-   CONTROLS
------------------------------------------ */
 
 .testimonial-controls {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 22px;
-  margin-top: 25px;
+  gap: 25px;
+  margin-top: 30px;
 }
 
 .testimonial-prev,
 .testimonial-next {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #d8e0e7;
   border-radius: 50%;
-  border: 1px solid #d9e2e9;
   background: #ffffff;
-  color: #123f65;
-  font-size: 20px;
+  color: #173957;
+  font-size: 22px;
   cursor: pointer;
   transition: all 0.25s ease;
 }
 
 .testimonial-prev:hover,
 .testimonial-next:hover {
-  background: #f47732;
-  border-color: #f47732;
+  background: #f47721;
   color: #ffffff;
+  border-color: #f47721;
   transform: translateY(-2px);
 }
 
 .testimonial-dots {
   display: flex;
-  align-items: center;
   gap: 8px;
 }
 
@@ -827,68 +676,46 @@ footer span {
   height: 9px;
   padding: 0;
   border: 0;
-  border-radius: 20px;
-  background: #cbd6df;
+  border-radius: 50%;
+  background: #cbd5df;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .testimonial-dot.active {
   width: 28px;
-  background: #f47732;
+  border-radius: 10px;
+  background: #f47721;
 }
 
 
-/* -----------------------------------------
-   SLIDE ANIMATION
------------------------------------------ */
-
-@keyframes testimonialIn {
-  from {
-    opacity: 0;
-    transform: translateX(35px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-
-/* -----------------------------------------
-   MOBILE
------------------------------------------ */
+/* MOBILE */
 
 @media (max-width: 700px) {
 
   .testimonial-slider {
-    width: 100%;
+    margin-top: 35px;
   }
 
   .testimonial-track {
-    min-height: 390px;
+    min-height: 430px;
   }
 
   .testimonial-slide {
-    min-height: 390px;
-    padding: 32px 25px;
-    border-radius: 16px;
+    padding: 30px 24px;
+    border-radius: 18px;
   }
 
   .quote-mark {
-    font-size: 65px;
-    margin-bottom: 18px;
+    font-size: 55px;
   }
 
   .testimonial-slide p {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.7;
   }
 
-  .testimonial-slide .person {
+  .testimonial-controls {
     margin-top: 20px;
   }
 
-  .testimonial-controls {
-   
+}
