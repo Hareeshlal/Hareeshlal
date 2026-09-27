@@ -187,3 +187,39 @@ document.addEventListener("DOMContentLoaded", function () {
   startAutoSlide();
 
 });
+// =========================
+// CONTACT FORM - WHATSAPP
+// =========================
+
+function sendWhatsAppEnquiry(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("enquiryName").value;
+
+    const email =
+        document.getElementById("enquiryEmail").value;
+
+    const phone =
+        document.getElementById("enquiryPhone").value;
+
+    const course =
+        document.getElementById("enquiryCourse").value;
+
+    const message =
+        document.getElementById("enquiryMessage").value;
+
+    const whatsappMessage =
+        `Hello Hareesh, I would like to enquire about training.%0A%0A` +
+        `Name: ${name}%0A` +
+        `Email: ${email}%0A` +
+        `Phone: ${phone}%0A` +
+        `Course: ${course}%0A` +
+        `Requirement: ${message}`;
+
+    window.open(
+        `https://wa.me/919544900152?text=${whatsappMessage}`,
+        "_blank"
+    );
+}
