@@ -66,7 +66,7 @@ section{padding:78px 20px}.wrap{width:min(920px,100%);margin:auto}.section-label
 <footer class="footer"><div class="script">Hareesh & Vaishnavi</div><p>Your presence will make our celebration more special.<br>We look forward to celebrating with you!</p><p>With love · 12 December 2026</p></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-const invitationUrl="https://hareeshlal.github.io/HareeshLal/wedding/";
+const invitationUrl="https://hareeshlal.github.io/wedding/";
 document.getElementById("weddingUrl").textContent=invitationUrl;
 new QRCode(document.getElementById("weddingQr"),{text:invitationUrl,width:220,height:220,colorDark:"#204638",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});
 document.getElementById("downloadQr").addEventListener("click",()=>{const canvas=document.querySelector("#weddingQr canvas");const img=document.querySelector("#weddingQr img");const src=canvas?canvas.toDataURL("image/png"):(img?img.src:"");if(!src){alert("QR code is still loading. Please try again.");return;}const a=document.createElement("a");a.href=src;a.download="Hareesh-Vaishnavi-Wedding-QR.png";a.click();});
