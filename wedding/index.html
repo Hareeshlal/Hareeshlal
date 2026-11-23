@@ -34,16 +34,23 @@ section{padding:78px 20px}.wrap{width:min(920px,100%);margin:auto}.section-label
 @media(prefers-reduced-motion:no-preference){.hero-card{animation:rise 1s ease both}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}}
 
 .couple-photo-section{padding:54px 20px 66px;background:#fbf8f1;text-align:center}
-.memory-collage{display:grid;grid-template-columns:1fr 1.35fr 1fr;align-items:center;gap:18px;width:min(1000px,100%);margin:34px auto 8px}
-.memory-photo{background:#fff;padding:10px 10px 34px;box-shadow:0 12px 32px #4c604022;border:1px solid #eee5d5;position:relative;transition:transform .5s ease,box-shadow .5s ease}
+.memory-collage{position:relative;display:grid;grid-template-columns:1fr 1.18fr 1fr;align-items:center;gap:18px;width:min(1050px,100%);margin:32px auto 28px;padding:22px 12px 30px}
+.memory-photo{background:#fff;padding:9px 9px 30px;box-shadow:0 12px 30px #4c40201c;border:1px solid #eee5d5;position:relative}
 .memory-photo img{display:block;width:100%;height:360px;object-fit:cover}
-.memory-photo.left{transform:rotate(-5deg) translateY(22px)}
-.memory-photo.center{z-index:2;transform:rotate(1deg)}
-.memory-photo.center img{height:500px}
-.memory-photo.right{transform:rotate(5deg) translateY(22px)}
-.memory-photo:hover{transform:translateY(-8px) rotate(0);box-shadow:0 18px 38px #4c604033}
-.memory-caption{font:italic 18px 'Cormorant Garamond',serif;color:#987d43;margin-top:28px;letter-spacing:.5px}
-@media(max-width:700px){.memory-collage{grid-template-columns:1fr 1fr;gap:12px;padding:0 5px}.memory-photo{padding:6px 6px 24px}.memory-photo img{height:230px}.memory-photo.center{grid-column:1 / -1;grid-row:1}.memory-photo.center img{height:min(115vw,520px)}.memory-photo.left{grid-column:1;transform:rotate(-3deg)}.memory-photo.right{grid-column:2;transform:rotate(3deg)}.memory-caption{font-size:15px;margin-top:18px}}
+.memory-photo.left{transform:rotate(-5deg) translateY(28px)}
+.memory-photo.center{z-index:2;transform:rotate(0);padding-bottom:34px}
+.memory-photo.center img{height:490px}
+.memory-photo.right{transform:rotate(5deg) translateY(28px)}
+.memory-caption{font:italic 17px 'Cormorant Garamond',serif;color:#987d43;margin-top:15px;letter-spacing:.5px}
+.memory-intro{font:14px 'Cormorant Garamond',serif;letter-spacing:5px;text-transform:uppercase;color:#806d4b;margin:0 0 10px}
+.memory-title{font:italic clamp(42px,7vw,76px) 'Cormorant Garamond',serif;color:#593b32;margin:0 0 10px}
+.memory-divider{display:flex;align-items:center;justify-content:center;gap:18px;color:#b99b55;font-size:25px;margin:10px auto}
+.memory-divider:before,.memory-divider:after{content:"";width:100px;height:1px;background:#b99b55}
+.memory-couple-names{font:italic clamp(28px,4vw,46px) 'Cormorant Garamond',serif;color:#693b3c;margin:20px 0 8px}
+.memory-date{font:17px 'Cormorant Garamond',serif;letter-spacing:3px;color:#693b3c;margin:8px 0}
+.memory-flower{position:absolute;color:#b7b18b;opacity:.7;font-size:45px;pointer-events:none}
+.memory-flower.one{top:0;left:0}.memory-flower.two{top:0;right:0}.memory-flower.three{bottom:0;left:0}.memory-flower.four{bottom:0;right:0}
+@media(max-width:700px){.memory-collage{grid-template-columns:1fr 1fr;gap:10px;padding:18px 2px 22px;margin-top:20px}.memory-photo{padding:6px 6px 22px}.memory-photo img{height:230px}.memory-photo.center{grid-column:1 / -1;grid-row:1;max-width:88%;justify-self:center}.memory-photo.center img{height:min(112vw,470px)}.memory-photo.left{grid-column:1;grid-row:2;transform:rotate(-3deg)}.memory-photo.right{grid-column:2;grid-row:2;transform:rotate(3deg)}.memory-caption{font-size:14px;margin-top:10px}.memory-intro{font-size:11px;letter-spacing:4px}.memory-title{font-size:48px}.memory-couple-names{font-size:30px}.memory-date{font-size:14px;letter-spacing:2px}.memory-flower{font-size:30px}.memory-divider:before,.memory-divider:after{width:55px}}
 .couple-photo{display:block;width:min(620px,100%);max-height:820px;object-fit:cover;object-position:center 35%;margin:26px auto 0;border:8px solid #fff;border-radius:4px;box-shadow:0 14px 42px #4c604022}.qr-share{background:#f3eee3;text-align:center;padding:58px 20px}
 .qr-card{width:min(440px,100%);margin:24px auto 0;padding:25px;background:#fff;border:1px solid #dfcfaa;border-radius:14px;box-shadow:0 10px 35px #4c604018}
 .qr-card h3{font:30px 'Cormorant Garamond',serif;color:var(--green);margin:4px 0 8px}
@@ -65,12 +72,18 @@ section{padding:78px 20px}.wrap{width:min(920px,100%);margin:auto}.section-label
   <a class="scroll" href="#invitation">Open invitation ↓</a>
  </div>
 </header>
-<section class="couple-photo-section"><div class="wrap"><p class="section-label">A beautiful beginning</p><h2 class="section-title">Together, Forever</h2>
-<div class="memory-collage" aria-label="Hareesh and Vaishnavi's photo memories">
-<figure class="memory-photo left"><img src="https://raw.githubusercontent.com/Hareeshlal/Hareeshlal/main/wedding/couple-forest.jpg" alt="Hareesh and Vaishnavi together outdoors"><figcaption class="memory-caption">A moment to remember</figcaption></figure>
-<figure class="memory-photo center"><img src="https://raw.githubusercontent.com/Hareeshlal/Hareeshlal/main/wedding/hareesh-vaishnavi.jpg" alt="Hareesh and Vaishnavi smiling together"><figcaption class="memory-caption">Together, forever</figcaption></figure>
+<section class="couple-photo-section"><div class="wrap">
+<div class="memory-flower one">✿</div><div class="memory-flower two">❀</div>
+<p class="memory-intro">You are invited to</p><h2 class="memory-title">Our Wedding</h2><div class="memory-divider">♡</div>
+<div class="memory-collage" aria-label="Wedding photo collage of Hareesh and Vaishnavi">
+<span class="memory-flower three">✿</span><span class="memory-flower four">❀</span>
+<figure class="memory-photo left"><img src="https://raw.githubusercontent.com/Hareeshlal/Hareeshlal/main/wedding/couple-forest.jpg" alt="Hareesh and Vaishnavi outdoors"><figcaption class="memory-caption">A moment to remember</figcaption></figure>
+<figure class="memory-photo center"><img src="https://raw.githubusercontent.com/Hareeshlal/Hareeshlal/main/wedding/hareesh-vaishnavi.jpg" alt="Hareesh and Vaishnavi together"><figcaption class="memory-caption">Together, forever</figcaption></figure>
 <figure class="memory-photo right"><img src="https://raw.githubusercontent.com/Hareeshlal/Hareeshlal/main/wedding/couple-white.jpg" alt="Hareesh and Vaishnavi in white outfits"><figcaption class="memory-caption">Our beautiful beginning</figcaption></figure>
-</div></div></section>
+</div>
+<div class="memory-couple-names">Hareesh Lal &amp; Vaishnavi DS</div><div class="memory-divider">♡</div>
+<p class="memory-date">12 December 2026</p><p class="memory-date">♥ Kerala</p>
+</div></section>
 <main>
 <section id="invitation"><div class="wrap">
  <p class="section-label">With joyful hearts</p><h2 class="section-title">The Wedding Invitation</h2>
