@@ -61,7 +61,14 @@ section{padding:78px 20px}.wrap{width:min(920px,100%);margin:auto}.section-label
 .qr-actions button{padding:12px 15px;border:1px solid var(--gold);background:#fffdf8;color:var(--green);font:inherit;font-size:12px;cursor:pointer}
 .qr-actions button:hover{background:var(--green);color:white}
 
-.wedding-collage-image{display:block;width:min(100%,900px);height:auto;margin:24px auto 30px;object-fit:contain;border-radius:2px;box-shadow:0 12px 32px #4c40201a}</style>
+.wedding-collage-image{display:block;width:min(100%,900px);height:auto;margin:24px auto 30px;object-fit:contain;border-radius:2px;box-shadow:0 12px 32px #4c40201a}.couple-slideshow{position:relative;width:min(100%,680px);height:clamp(360px,72vw,680px);margin:24px auto 12px;overflow:hidden;border:9px solid #fff;border-radius:3px;box-shadow:0 12px 32px #4c40201a;background:#f7f1e7}
+.photo-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity 1s ease}
+.photo-slide.active{opacity:1}
+.photo-dots{display:flex;justify-content:center;gap:9px;margin:12px auto 25px}
+.photo-dot{width:8px;height:8px;border-radius:50%;background:#cfc3a3;transition:background .5s}
+.photo-dot.active{background:#987d43}
+@media(max-width:700px){.couple-slideshow{width:100%;height:clamp(360px,105vw,560px);border-width:6px;margin:20px auto 10px}.photo-dots{margin-bottom:22px}}
+</style>
 </head>
 <body>
 <header class="hero" id="home">
@@ -75,7 +82,12 @@ section{padding:78px 20px}.wrap{width:min(920px,100%);margin:auto}.section-label
 </header>
 <section class="couple-photo-section"><div class="wrap">
 <p class="memory-intro">You are invited to</p><h2 class="memory-title">Our Wedding</h2><div class="memory-divider">♡</div>
-<img class="wedding-collage-image" src="wedding-collage.png" alt="Decorative wedding photo collage of Hareesh and Vaishnavi">
+<div class="couple-slideshow" id="coupleSlideshow" aria-label="Hareesh and Vaishnavi photo slideshow">
+<img class="photo-slide active" src="IMG-20261106-WA0079.jpg" alt="Hareesh and Vaishnavi together">
+<img class="photo-slide" src="couple-forest.jpg" alt="Hareesh and Vaishnavi outdoors">
+<img class="photo-slide" src="couple-white.jpg" alt="Hareesh and Vaishnavi in white outfits">
+</div>
+<div class="photo-dots" id="couplePhotoDots" aria-label="Slideshow position"><span class="photo-dot active"></span><span class="photo-dot"></span><span class="photo-dot"></span></div>
 <div class="memory-couple-names">Hareesh Lal &amp; Vaishnavi DS</div><div class="memory-divider">♡</div>
 <p class="memory-date">12 December 2026</p><p class="memory-date">♥ Kerala</p>
 </div></section>
