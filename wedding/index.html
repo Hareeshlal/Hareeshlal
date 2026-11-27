@@ -68,6 +68,11 @@ section{padding:78px 20px}.wrap{width:min(920px,100%);margin:auto}.section-label
 .photo-dot{width:8px;height:8px;border-radius:50%;background:#cfc3a3;transition:background .5s}
 .photo-dot.active{background:#987d43}
 @media(max-width:700px){.couple-slideshow{width:100%;height:clamp(360px,105vw,560px);border-width:6px;margin:20px auto 10px}.photo-dots{margin-bottom:22px}}
+
+.save-date-video{background:#fbf8f1;text-align:center;padding:62px 20px}
+.save-date-video-frame{width:min(520px,100%);margin:26px auto 12px;background:#201812;border:8px solid #fff;box-shadow:0 12px 32px #4c40201a}
+.save-date-video-frame video{display:block;width:100%;max-height:78vh;aspect-ratio:9/16;object-fit:contain;background:#201812}
+.save-date-video-note{font:15px 'Cormorant Garamond',serif;letter-spacing:2px;color:#987d43;margin-top:16px}
 </style>
 </head>
 <body>
@@ -91,6 +96,13 @@ section{padding:78px 20px}.wrap{width:min(920px,100%);margin:auto}.section-label
 <div class="memory-couple-names">Hareesh Lal &amp; Vaishnavi DS</div><div class="memory-divider">♡</div>
 <p class="memory-date">12 December 2026</p><p class="memory-date">♥ Kerala</p>
 </div></section>
+<section class="save-date-video" id="save-the-date"><div class="wrap">
+ <p class="section-label">A little glimpse of our story</p><h2 class="section-title">Save the Date</h2>
+ <p class="intro">Celebrate the beginning of our forever with us.</p>
+ <div class="save-date-video-frame"><video controls playsinline preload="metadata" aria-label="Hareesh and Vaishnavi Save the Date video"><source src="save-the-date.mp4" type="video/mp4">Your browser does not support the video player.</video></div>
+ <p class="save-date-video-note">12 December 2026 · Hareesh Lal &amp; Vaishnavi DS</p>
+</div></section>
+
 <main>
 <section id="invitation"><div class="wrap">
  <p class="section-label">With joyful hearts</p><h2 class="section-title">The Wedding Invitation</h2>
@@ -123,7 +135,7 @@ section{padding:78px 20px}.wrap{width:min(920px,100%);margin:auto}.section-label
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-const invitationUrl="https://hareeshlal.github.io/Hareeshlal/wedding/";
+const invitationUrl="https://hareeshlal.github.io/wedding/";
 const qrContainer=document.getElementById("weddingQr");
 if (window.QRCode && qrContainer) {
  new QRCode(qrContainer,{text:invitationUrl,width:220,height:220,colorDark:"#204638",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});
